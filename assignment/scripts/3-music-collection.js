@@ -41,10 +41,10 @@ function findByArtist(artist) {
     let findArtist = []; //   - Create an array to hold any results, empty to start
 // - Loop through the `collection` and add any objects with a matching artist to the array.
     for (let i = 0; i < collection.length; i++) { 
-          if (collection[i].artist === artist) {
+        if (collection[i].artist === artist) {
             findArtist.push(collection[i]);
-          }
         }
+    }
 // - Return the array with the matching results. If no results are found, return an empty array.
   return findArtist;
 }
@@ -52,3 +52,28 @@ function findByArtist(artist) {
 // as well as an artist you know is not in your collection. Check that for artists with multiple matches, all are found.
 console.log('Find artist, Two:', findByArtist('Two'));
 console.log('Find artist, Eight', findByArtist('Eight'));
+console.log('Find artist, Five', findByArtist('Five'));
+console.log('Find artist, Ten', findByArtist('Ten'));
+
+// - Create a function called `search`. This function should:
+// - Take an input parameter for a search criteria object. Create your solution based on a search object that has these properties:
+// - { artist: 'Ray Charles', year: 1957 }
+function search(object) {
+    let searchResults = [];
+    for (let i = 0; i < collection.length; i++) {
+// - The returned output from `search` should meet these requirements:
+        if (collection[i].artist === object.artist && collection[i].yearPublished === object.year) {
+// - Return a new array of all items in the `collection` matching *all* of the search criteria.
+console.log(collection[i]);
+        searchResults.push(collection[i]);
+        } else if (searchResults.length === 0){
+        return []; // - If no results are found, return an empty array.
+// - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.        
+        } else
+        return collection;
+    };
+}
+
+console.log('Search for, Two and 1984:', search('Two', '1984'));
+
+
