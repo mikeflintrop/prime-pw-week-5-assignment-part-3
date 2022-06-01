@@ -9,7 +9,7 @@ function addToCollection(title, artist, yearPublished) {// - Add a function name
         artist: artist,
         yearPublished: yearPublished,
     };
-    collection.push({newAlbum}); // - Add the new object to the end of the `collection` array
+    collection.push(newAlbum); // - Add the new object to the end of the `collection` array
     return newAlbum; // - Return the newly created object
 }
 // - Test the `addToCollection` function:
@@ -30,7 +30,7 @@ function showCollection(array) {
     console.log(array.length) // - Console.log the number of items in the array.
 // - Loop over the array and console.log each album's information formatted like: `TITLE by ARTIST, published in YEAR`.
     for (let i = 0; i < array.length; i++) {
-        console.log(`${array.title} by ${array.artist}. Published in ${array.yearPublished}.`);
+        console.log(`${array[i].title} by ${array[i].artist}. Published in ${array[i].yearPublished}.`);
     }
 }
 console.log('Showing Collection:'), showCollection(collection); // - Test the `showCollection` function.
