@@ -62,16 +62,14 @@ function search(object) {
     let searchResults = [];
         for (let i = 0; i < collection.length; i++) {
 // - The returned output from `search` should meet these requirements:
-            if (collection[i].artist === object.artist && collection[i].yearPublished === object.year){
+        if (collection[i].artist === object.artist && collection[i].yearPublished === object.year) {
 // - Return a new array of all items in the `collection` matching *all* of the search criteria.
         //console.log(collection[i]);
             searchResults.push(collection[i].artist + " " + collection[i].yearPublished);
-            } 
-        if (searchResults.length > 0){
+        } else if (searchResults.length > 0) {
         return []; // - If no results are found, return an empty array.
 // - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.        
-        } 
-        else {
+        } else {
         return collection;
         }
     }
