@@ -59,21 +59,22 @@ console.log('Find artist, Ten', findByArtist('Ten'));
 // - Take an input parameter for a search criteria object. Create your solution based on a search object that has these properties:
 // - { artist: 'Ray Charles', year: 1957 }
 function search(object) {
+    if (Object.keys(object).length === 0) {
+        return collection;
+    }
     let searchResults = [];
         for (let i = 0; i < collection.length; i++) {
 // - The returned output from `search` should meet these requirements:
         if (collection[i].artist === object.artist && collection[i].yearPublished === object.year) {
 // - Return a new array of all items in the `collection` matching *all* of the search criteria.
         //console.log(collection[i]);
-            searchResults.push(collection[i].artist + " " + collection[i].yearPublished);
-        } else if (searchResults.length > 0) {
-        return []; // - If no results are found, return an empty array.
-// - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.        
-        } else {
-        return collection;
-        }
+            searchResults.push(collection[i]);
+         // - If no results are found, return an empty array.
+// - If there is no search object or an empty search object provided as input, then return all albums in the `collection`.             
+        }   
     }
+    return searchResults 
 }
 console.log('Search for, Two and 1984:', search({artist: 'Two', year: '1984'}));
 console.log('Search for, Nine and 1990:', search({artist: 'Nine', year: '1990'}));
-
+console.log('Search for empty search object:', search({}))
